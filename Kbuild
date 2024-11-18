@@ -13,6 +13,16 @@ else
 		include $(AUDIO_ROOT)/config/lahainaauto.conf
 		INCS    +=  -include $(AUDIO_ROOT)/config/lahainaautoconf.h
 	endif
+	ifeq ($(CONFIG_MACH_XIAOMI_REDWOOD), y)
+		include $(AUDIO_ROOT)/config/redwoodaudio.conf
+		export
+		INCS    +=  -include $(AUDIO_ROOT)/config/redwoodaudioconf.h
+	endif
+	ifeq ($(CONFIG_MACH_XIAOMI_LISA), y)
+		include $(AUDIO_ROOT)/config/lisaaudio.conf
+		export
+		INCS    +=  -include $(AUDIO_ROOT)/config/lisaaudioconf.h
+	endif
 endif
 
 # As per target team, build is done as follows:
